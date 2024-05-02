@@ -1,0 +1,14 @@
+int Solution::solve(vector<int> &A) {
+    int n = A.size();
+    int max = A[0];
+    int count = 1;
+    for(int i = 1; i < n; i++){
+        if(A[i] > max){
+            
+        
+        max = A[i];
+        count++;
+    }
+}
+return count;
+}
