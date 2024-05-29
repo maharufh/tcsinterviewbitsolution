@@ -1,0 +1,29 @@
+ 
+int solve(int A) {
+    // Step 1: Extract digits and count the number of digits
+    int originalNumber = A;
+    int sum = 0;
+    int numDigits = 0;
+    
+    // Copy of A to count the digits
+    int temp = A;
+    while (temp > 0) {
+        temp /= 10;
+        numDigits++;
+    }
+    
+    // Step 2: Compute the Armstrong sum
+    temp = A; // reset temp to original number
+    while (temp > 0) {
+        int digit = temp % 10;
+        temp /= 10;
+        sum += pow(digit, numDigits); // raise digit to the power of numDigits
+    }
+    
+    // Step 3: Check if the computed sum is equal to the original number
+    if (sum == originalNumber) {
+        return 1; // It's an Armstrong number
+    } else {
+        return 0; // It's not an Armstrong number
+    }
+}
